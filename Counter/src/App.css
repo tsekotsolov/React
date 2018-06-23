@@ -19,7 +19,9 @@
 }
 
 .App-intro {
-  font-size: large;
+  font-size: 2rem;
+  font-weight: bold;
+  color: red;
 }
 
 button{
