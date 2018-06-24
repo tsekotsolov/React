@@ -1,7 +1,6 @@
 import React from 'react'
 import './app.css'
 import data from '../src/contacts.json'
-
 import reRender from './index'
 
 let click = (contact) => {
