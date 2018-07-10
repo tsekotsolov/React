@@ -19,8 +19,6 @@ export default class SignUpForm extends Component {
       form:Object.assign(this.state.form,inputDataObj)
     })
 
-
- 
   }
 
   submit = (event)=>{
@@ -35,13 +33,17 @@ export default class SignUpForm extends Component {
         }
       }
   ).then(data=>data.json())
-   .then(response=>console.log(response))
-    
+   .then(response=>
+    {
+      console.log(response)
+    }
+    )
   }
+
 
   render () {
     return (<form className='container'>
-      <h2>Sign Up </h2>
+      <h2>Create an account</h2>
       <div className='form-group'>
         <label htmlFor='exampleInputEmail1'>Email address</label>
         <input data-name='email' onChange={this.captureInputData} type='email' className='form-control' id='exampleInputEmail1' aria-describedby='emailHelp' placeholder='Enter email' />
@@ -59,6 +61,12 @@ export default class SignUpForm extends Component {
 
       <button type='button' onClick={this.submit} className='btn btn-primary'>Submit</button>
 
-    </form>)
+      <p className='m-3'>Already have an account?</p>
+
+      <button type='button' onClick={()=> this.props.redirect()}  className="btn btn-success">Login Here</button>
+
+    </form>
+   
+  )
   }
 }

@@ -33,7 +33,15 @@ export default class LoginForm extends Component {
         }
       }
   ).then(data=>data.json())
-   .then(response=>console.log(response))
+   .then(response=>
+    {
+      if(response.success&&response.token){
+        localStorage.setItem('token',response.token)
+        this.props.setlogged()
+        console.log(response)
+      }
+    }
+    )
     
   }
 
@@ -52,6 +60,9 @@ export default class LoginForm extends Component {
 
       <button type='button' onClick={this.submit} className='btn btn-primary'>Submit</button>
 
+      <p className='m-3'>Dont't have an account?</p>
+
+      <button type='button' onClick={()=> this.props.redirect()}  className="btn btn-success">Sign In Here</button>
     </form>)
   }
 }
