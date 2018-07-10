@@ -31,7 +31,7 @@ export default class LogggedInScreen extends Component {
         <div className='wrapper'>
           <AddPokemonForm />
 
-          <div className='pokemons' >
+          <div className='pokemons m-5'>
             { this.state.pokemons.map((pokemon, index) => {
               return <Pokemon key={index} image={pokemon.pokemonImg} name={pokemon.pokemonName} info={pokemon.pokemonInfo} />
             })}
