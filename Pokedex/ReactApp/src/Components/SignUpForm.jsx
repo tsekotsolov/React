@@ -35,6 +35,10 @@ export default class SignUpForm extends Component {
   ).then(data=>data.json())
    .then(response=>
     {
+
+      if(response.success){
+        this.props.redirect()
+      }
       console.log(response)
     }
     )

@@ -3,3 +3,8 @@
   max-width:350px;
   margin: 20px auto;  
 }
+
+.pokemons{
+  display:flex;
+  flex-wrap: wrap;
+}

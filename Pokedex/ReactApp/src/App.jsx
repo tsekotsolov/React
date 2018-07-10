@@ -3,6 +3,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import SignUpForm from './Components/SignUpForm'
 import LoginForm from './Components/LoginForm'
+import LoggedInScreen from './Components/LoggedInScreen'
 
 export default class App extends Component {
   constructor (props) {
@@ -21,7 +22,7 @@ showAppropriateComponent= ()=> {
     return  <LoginForm redirect={this.redirect} setlogged={this.setUserLoggedIn}/>
   }
   else if(this.state.route==='loggedIn'){
-    return  <h1>User is logged</h1>  
+    return  <LoggedInScreen />  
   }
   return <SignUpForm redirect={this.redirect} />
 }
