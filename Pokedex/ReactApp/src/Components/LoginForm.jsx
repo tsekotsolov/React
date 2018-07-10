@@ -46,7 +46,7 @@ export default class LoginForm extends Component {
   }
 
   render () {
-    return (<form className='container'>
+    return (<form>
       <h2>Login</h2>
       <div className='form-group'>
         <label htmlFor='exampleInputEmail1'>Email address</label>

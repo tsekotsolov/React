@@ -41,7 +41,9 @@ export default class PokemonForm extends Component {
 
   render () {
     return (
-    <form className='container'>
+
+      <div className="container">
+      <form >
       <h2>Create Pokemon</h2>
       <div className='form-group'>
         <label htmlFor='input-pokename'>Pokemon name</label>
@@ -61,6 +63,10 @@ export default class PokemonForm extends Component {
      
       <button type='button' onClick={this.submit} className='btn btn-primary'>Create pokemon</button>
 
-    </form>)
+    </form>
+      </div>
+    
+    
+  )
   }
 }

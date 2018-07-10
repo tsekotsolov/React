@@ -23,7 +23,7 @@ export default class LogggedInScreen extends Component {
   render () {
     if (this.state.pokemons.length === 0) {
       return (
-        <div>Loading...</div>
+        <AddPokemonForm />
       )
     } else {
       return (
@@ -31,10 +31,13 @@ export default class LogggedInScreen extends Component {
         <div className='wrapper'>
           <AddPokemonForm />
 
-          <div className='pokemons m-5'>
-            { this.state.pokemons.map((pokemon, index) => {
-              return <Pokemon key={index} image={pokemon.pokemonImg} name={pokemon.pokemonName} info={pokemon.pokemonInfo} />
-            })}
+          <div className='container mt-5'>
+            <div className='row'>
+              { this.state.pokemons.map((pokemon, index) => {
+                return <Pokemon key={index} image={pokemon.pokemonImg} name={pokemon.pokemonName} info={pokemon.pokemonInfo} />
+              })}
+            </div>
+
           </div>
         </div>
 

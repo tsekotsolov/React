@@ -46,7 +46,7 @@ export default class SignUpForm extends Component {
 
 
   render () {
-    return (<form className='container'>
+    return (<form>
       <h2>Create an account</h2>
       <div className='form-group'>
         <label htmlFor='exampleInputEmail1'>Email address</label>
