@@ -4,7 +4,7 @@ export default class Pokemon extends Component {
   render () {
     return (
 
-      <div className='single-pokemon col-md'>
+      <div className='single-pokemon col-md m-1'>
         <div className='bio'>
           <h3>{this.props.name}</h3>
           <p>{this.props.info}</p>

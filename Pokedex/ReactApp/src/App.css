@@ -11,3 +11,8 @@ form {
   max-width:350px;
   margin: 0 auto;
 }
+
+.single-pokemon{
+  border: 0.5px solid grey;
+  padding: 15px;
+}
