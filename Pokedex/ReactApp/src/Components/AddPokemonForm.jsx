@@ -4,7 +4,7 @@ export default class PokemonForm extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      form: {}
+      form: {},
     }
   }
 
@@ -14,6 +14,11 @@ export default class PokemonForm extends Component {
     let fieldValue = event.target.value
     let inputDataObj = {}
     inputDataObj[fieldName] = fieldValue
+    event.target.style.color='red'
+
+    if(fieldValue.length>3){
+      event.target.style.color='green'
+    }
 
     this.setState({
       form:Object.assign(this.state.form,inputDataObj)
@@ -37,36 +42,33 @@ export default class PokemonForm extends Component {
   ).then(data=>data.json())
    .then(response=>{
        console.log(response)
+       this.props.forceRender(response)
    })} 
 
   render () {
     return (
 
       <div className="container">
-      <form >
-      <h2>Create Pokemon</h2>
-      <div className='form-group'>
-        <label htmlFor='input-pokename'>Pokemon name</label>
-        <input data-name='pokemonName' onChange={this.captureInputData} type='email' className='form-control' id='input-pokename' aria-describedby='emailHelp' placeholder='Enter pokemon name' />
-      </div>
+        <form >
+          <h2>Create Pokemon</h2>
+          <div className='form-group'>
+            <label htmlFor='input-pokename'>Pokemon name</label>
+            <input data-name='pokemonName' onChange={this.captureInputData} type='email' className='form-control' id='input-pokename' aria-describedby='emailHelp' placeholder='Enter pokemon name' />
+          </div>
 
-      <div className='form-group'>
-        <label htmlFor='input-pokeImg'>Pokemon Image</label>
-        <input data-name='pokemonImg' onChange={this.captureInputData} type='email' className='form-control' id='input-pokeImg' aria-describedby='emailHelp' placeholder='Insert image URL' />
-      </div>
+          <div className='form-group'>
+            <label htmlFor='input-pokeImg'>Pokemon Image</label>
+            <input data-name='pokemonImg' onChange={this.captureInputData} type='email' className='form-control' id='input-pokeImg' aria-describedby='emailHelp' placeholder='Insert image URL' />
+          </div>
 
-      <div className='form-group'>
-        <label htmlFor='pokename'>Pokemon Info</label>
-        <input data-name='pokemonInfo' onChange={this.captureInputData} type='email' className='form-control' id='input-pokeInfo' aria-describedby='emailHelp' placeholder='Add pokemon info' />
-      </div>
+          <div className='form-group'>
+            <label htmlFor='pokename'>Pokemon Info</label>
+            <input data-name='pokemonInfo' onChange={this.captureInputData} type='email' className='form-control' id='input-pokeInfo' aria-describedby='emailHelp' placeholder='Add pokemon info' />
+          </div>
 
-     
-      <button type='button' onClick={this.submit} className='btn btn-primary'>Create pokemon</button>
-
-    </form>
+          <button type='button' onClick={this.submit} className='btn btn-primary'>Create pokemon</button>
+      </form>
       </div>
-    
-    
   )
   }
 }

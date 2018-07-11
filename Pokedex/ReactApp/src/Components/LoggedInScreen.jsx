@@ -20,27 +20,29 @@ export default class LogggedInScreen extends Component {
       })
   }
 
+  forceRender = (newArray)=>{
+    this.setState({
+      pokemons: newArray
+    })
+  }
+
   render () {
     if (this.state.pokemons.length === 0) {
       return (
-        <AddPokemonForm />
+        <AddPokemonForm forceRender={this.forceRender}/>
       )
     } else {
       return (
-
         <div className='wrapper'>
-          <AddPokemonForm />
-
+          <AddPokemonForm forceRender={this.forceRender} />
           <div className='container mt-5'>
             <div className='row'>
               { this.state.pokemons.map((pokemon, index) => {
                 return <Pokemon key={index} image={pokemon.pokemonImg} name={pokemon.pokemonName} info={pokemon.pokemonInfo} />
               })}
             </div>
-
           </div>
         </div>
-
       )
     }
   }

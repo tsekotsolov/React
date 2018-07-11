@@ -27,7 +27,10 @@ showAppropriateComponent= ()=> {
   return <SignUpForm redirect={this.redirect} />
 }
 
+
+
 redirect = ()=>{
+
 
   if(this.state.route==='login'){
     this.setState({

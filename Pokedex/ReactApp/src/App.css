@@ -1,10 +1,11 @@
+
 .App {
   text-align: center;
 }
 
 img{
   width: 80%;
-  height: 100%
+  height: 100%;
 }
 
 form {
@@ -14,5 +15,9 @@ form {
 
 .single-pokemon{
   border: 0.5px solid grey;
-  padding: 15px;
+  padding: 15px; 
+}
+
+.row{
+  justify-content: center;
 }
